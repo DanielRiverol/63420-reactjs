@@ -74,7 +74,7 @@ document.querySelector("h1").innerHTML = `Comisión ${numeroComision}`;
 function actualizarDatos() {
   // Actualizamos los enlaces con el nuevo valor
   datos.forEach((fila) => {
-    fila.enlace = `https://github.com/DanielRiverol/${numeroComision}-js/tree/clases/${
+    fila.enlace = `https://github.com/DanielRiverol/${numeroComision}-reactjs/tree/clases/${
       fila.enlace.split("/")[8]
     }`;
   });
