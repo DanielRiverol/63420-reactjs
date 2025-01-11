@@ -1,6 +1,8 @@
 import "./App.css";
 
 import { useRef, useState } from "react";
+// import Contador from "./components/Contador";
+import CuentaVueltas from "./components/CuentaVueltas";
 /* eslint-disable */
 function Layout({ title, parrafo, children }) {
   console.log(title, parrafo, children);
@@ -31,12 +33,14 @@ function App() {
   return (
     <>
       <div className='card'>
-        <h1>useRef</h1>
-        <div>
+        <h1>useEffect</h1>
+        {/* <Contador /> */}
+        <CuentaVueltas />
+        {/* <div>
           <p>Hiciste click {count} veces en el botón</p>
           <p>El componente se renderizo {renders.current} veces</p>
           <button onClick={() => setCount(count + 1)}>Sumar</button>
-        </div>
+        </div> */}
 
         {/* <div>
           <div ref={divRef}>Contenido</div>
