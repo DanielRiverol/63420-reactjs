@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
+import ItemListContainer from "./components/ItemListContainer";
 function App() {
   const [posts, setPosts] = useState([]);
 
@@ -19,12 +20,12 @@ function App() {
   };
 
   // efecto
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   fetchPosts();
+  // }, []);
   return (
     <>
-      <div style={styles.container}>
+      {/* <div style={styles.container}>
         <h1 style={styles.title}>Listado de posts</h1>
         <ul style={styles.list}>
           {posts.map((post) => (
@@ -34,7 +35,9 @@ function App() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
+      <h1>Producto</h1>
+      <ItemListContainer />
     </>
   );
 }
