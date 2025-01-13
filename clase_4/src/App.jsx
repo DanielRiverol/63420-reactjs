@@ -1,9 +1,10 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useCount } from "./hooks/CustomHook.js";
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer";
 import UserList from "./components/UserList.jsx";
 import withLoading from "./components/HOC/withLoading.jsx";
+import UserFilter from "./components/RP/UserFilter.jsx";
 
 const ComponenteEnvuelto = withLoading(UserList);
 
@@ -85,10 +86,28 @@ function App() {
         </div>
       </div> */}
 
-      <div className='card'>
-        <h1>Star-trek</h1>
+      {/* <div className='card'>
+        <h1>Star-trek Voyager</h1>
         <h2>Personajes</h2>
         <ComponenteEnvuelto isLoading={isLoading} users={users} />
+      </div> */}
+
+      {/* parte 5 */}
+      <h1>Star-trek Voyager</h1>
+      <h2>Personajes</h2>
+      <div className='card'>
+        <UserFilter
+          users={users}
+          render={(filteredUsers) => (
+            
+              <ul>
+                {filteredUsers.map((user) => (
+                  <li key={user.id}>{user.name}</li>
+                ))}
+              </ul>
+            
+          )}
+        />
       </div>
     </>
   );
