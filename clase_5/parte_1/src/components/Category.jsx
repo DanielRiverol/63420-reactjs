@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, NavLink } from "react-router-dom";
 const productsList = [
   {
     id: 1,
@@ -64,16 +64,16 @@ const productsList = [
 ];
 function Category() {
   const { categoryId } = useParams();
-//   console.log(typeof categoryId);
+  //   console.log(typeof categoryId);
 
   const [products, setProduct] = useState([]);
   const [catId, setCatId] = useState(categoryId);
-//   console.log(typeof catId);
+  //   console.log(typeof catId);
 
   useEffect(() => {
     // setProduct(productsList);
     const filterProducts = productsList.filter(
-      (prod) => prod.category === parseInt(catId)
+      (prod) => prod.category === Number(catId) //parseInt(catId) || +catId
     );
     setProduct(filterProducts);
   }, [categoryId]);
@@ -91,6 +91,7 @@ function Category() {
           </li>
         ))}
       </ul>
+      <NavLink to={"/categories"}>Volver las categorias</NavLink>
     </div>
   );
 }

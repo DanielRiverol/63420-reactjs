@@ -9,13 +9,18 @@ function App() {
   return (
     <>
       <BrowserRouter>
-          <Navbar />
-        <main className="wrapper">
+        <Navbar />
+        <main className='wrapper'>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/categories' element={<Categories />} />
-            {/* ruta con parametros */}
-            <Route path='/categories/:categoryId' element={<Category />} />
+
+            {/* Anidando rutas */}
+            <Route path='/categories'>
+              <Route index element={<Categories />} />
+              {/* ruta con parametros */}
+              <Route path='/categories/:categoryId' element={<Category />} />
+              <Route path='/categories/:name' element={<Category />} />
+            </Route>
 
             {/* Route para 404 */}
             <Route path='*' element={<NotFound />} />
