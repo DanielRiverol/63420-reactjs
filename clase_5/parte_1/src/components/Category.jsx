@@ -1,5 +1,5 @@
-import { use } from "react";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 const productsList = [
   {
     id: 1,
@@ -63,19 +63,24 @@ const productsList = [
   },
 ];
 function Category() {
+  const { categoryId } = useParams();
+//   console.log(typeof categoryId);
+
   const [products, setProduct] = useState([]);
-  const [catId, setCatId] = useState(1);
+  const [catId, setCatId] = useState(categoryId);
+//   console.log(typeof catId);
+
   useEffect(() => {
     // setProduct(productsList);
     const filterProducts = productsList.filter(
-      (prod) => prod.category === catId
+      (prod) => prod.category === parseInt(catId)
     );
     setProduct(filterProducts);
-  }, []);
+  }, [categoryId]);
 
   return (
     <div>
-      <h2>Category</h2>
+      <h2>Category {catId}</h2>
       <ul className='container'>
         {products.map((product) => (
           <li key={product.id}>

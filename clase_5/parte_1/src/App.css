@@ -4,10 +4,12 @@
 h1,
 h2 {
   text-align: center;
+  margin: 1rem !important;
 }
 .container {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .card {
   width: 300px;
