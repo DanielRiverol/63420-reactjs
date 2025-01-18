@@ -1,4 +1,5 @@
-import React from 'react'
+import { use } from "react";
+import { useEffect, useState } from "react";
 const productsList = [
   {
     id: 1,
@@ -62,9 +63,31 @@ const productsList = [
   },
 ];
 function Category() {
+  const [products, setProduct] = useState([]);
+  const [catId, setCatId] = useState(1);
+  useEffect(() => {
+    // setProduct(productsList);
+    const filterProducts = productsList.filter(
+      (prod) => prod.category === catId
+    );
+    setProduct(filterProducts);
+  }, []);
+
   return (
-    <div>Category</div>
-  )
+    <div>
+      <h2>Category</h2>
+      <ul className='container'>
+        {products.map((product) => (
+          <li key={product.id}>
+            <div className='card'>
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default Category
+export default Category;
