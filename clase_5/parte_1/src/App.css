@@ -1,0 +1,54 @@
+#root {
+  width: 100%;
+}
+h1,
+h2 {
+  text-align: center;
+}
+.container {
+  display: flex;
+  gap: 1rem;
+}
+.card {
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+.card img {
+  width: 150px;
+}
+.navbar {
+  width: 100% !important;
+  max-width: 100vw;
+  border: none;
+  background-color: #333;
+}
+.navbar ul {
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+.navbar ul li {
+  list-style: none;
+}
+.wrapper {
+  width: 100%;
+  padding: 0 30px;
+  height: 100vh;
+}
+
+.navbar a {
+  color: #ddd !important;
+}
+.navbar a:hover {
+  color: #333 !important;
+}
+li {
+  list-style: none;
+}
+.text-lg {
+  font-size: 15rem;
+  font-weight: 600;
+}

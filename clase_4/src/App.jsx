@@ -99,13 +99,13 @@ function App() {
         <UserFilter
           users={users}
           render={(filteredUsers) => (
-            
+
               <ul>
                 {filteredUsers.map((user) => (
                   <li key={user.id}>{user.name}</li>
                 ))}
               </ul>
-            
+
           )}
         />
       </div>
