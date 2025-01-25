@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+.card {
+  width: 300px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+.card img{
+  width: 150px;
+
+}
+

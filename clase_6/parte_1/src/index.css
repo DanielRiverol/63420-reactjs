@@ -1,0 +1,71 @@
+/* Variables para ambos temas */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #4a90e2;
+  --secondary-color: #eaeaea;
+  --accent-color: #ff9800;
+}
+
+.theme-dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #bb86fc;
+  --secondary-color: #1e1e1e;
+  --accent-color: #03dac6;
+}
+
+.theme-light {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #4a90e2;
+  --secondary-color: #eaeaea;
+  --accent-color: #ff9800;
+}
+
+/* Aplicamos los estilos globales */
+.theme-light,
+.theme-dark {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Estilos de ejemplo */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
